@@ -28,7 +28,7 @@ describe LegacyAppeal, :all_dbs do
       subject { appeal.structure(:id) }
 
       it "returns the task structure" do
-        expect_any_instance_of(RootTask).to receive(:structure).with(:id)
+        expect_any_instance_of(RootTask).to receive(:structure).with(:id, {})
         expect(subject.key?(:"LegacyAppeal #{appeal.id} [id]")).to be_truthy
       end
 
@@ -38,8 +38,8 @@ describe LegacyAppeal, :all_dbs do
         let!(:colocated_task) { create(:colocated_task, appeal: appeal, parent: nil) }
 
         it "returns all parentless tasks" do
-          expect_any_instance_of(RootTask).to receive(:structure).with(:id)
-          expect_any_instance_of(ColocatedTask).to receive(:structure).with(:id)
+          expect_any_instance_of(RootTask).to receive(:structure).with(:id, {})
+          expect_any_instance_of(ColocatedTask).to receive(:structure).with(:id, {})
           expect(subject.key?(:"LegacyAppeal #{appeal.id} [id]")).to be_truthy
           expect(subject[:"LegacyAppeal #{appeal.id} [id]"].count).to eq 2
         end

@@ -4,13 +4,31 @@ module PrintsTaskTree
   extend ActiveSupport::Concern
   include TaskTreeRenderModule
 
-  def structure_render(*atts)
-    TTY::Tree.new(structure(*atts)).render
+  def self.included(other)
+    other.class_eval { alias_method :sr, :structure_render }
   end
 
-  def structure(*atts)
-    leaf_name = "#{self.class.name} #{task_tree_attributes(*atts)}"
-    { "#{leaf_name}": task_tree_children.map { |child| child.structure(*atts) } }
+  def structure_render(*atts, **kwargs)
+    TTY::Tree.new(structure(*atts, **kwargs)).render
+  end
+
+  def sra(*atts)
+    structure_render(*atts, abbreviate: true)
+  end
+
+  def srr(*atts)
+    puts structure_render(*atts) # rubocop: disable Rails/Output
+  end
+
+  def srra(*atts)
+    puts sra(*atts) # rubocop: disable Rails/Output
+  end
+
+  def structure(*atts, **kwargs)
+    abbreviate = kwargs&.dig(:abbreviate) == true
+    class_name = abbreviate ? self.class.name.scan(/\p{Upper}/).join : self.class.name
+    leaf_name = "#{class_name} #{task_tree_attributes(*atts)}"
+    { "#{leaf_name}": task_tree_children.map { |child| child.structure(*atts, **kwargs) } }
   end
 
   def structure_as_json(*atts)
