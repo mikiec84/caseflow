@@ -46,7 +46,7 @@ gem "pg", platforms: :ruby
 gem "puma", "~> 3.12.4"
 # rack versions before 2.0.6 are affected by CVE-2018-16470 and CVE-2018-16471.
 # Explicitly define rack version here to avoid that.
-gem "rack", "~> 2.0.6"
+gem "rack", "~> 2.1.4"
 gem "rails", "5.2.4.2"
 # Used to colorize output for rake tasks
 gem "rainbow"
