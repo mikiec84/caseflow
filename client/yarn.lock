@@ -6642,9 +6642,10 @@ domhandler@^3.0, domhandler@^3.0.0:
   dependencies:
     domelementtype "^2.0.1"
 
-dompurify@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-1.0.3.tgz#3f2f6ecb6ecd27599a506b410ff47d6eb90fd05d"
+dompurify@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/dompurify/-/dompurify-2.0.3.tgz#5cc4965a487d54aedba6ba9634b137cfbd7eb50d"
+  integrity sha512-q006uOkD2JGSJgF0qBt7rVhUvUPBWCxpGayALmHvXx2iNlMfNVz7PDGeXEUjNGgIDjADz59VZCv6UE3U8XRWVw==
 
 domready@^1.0.8:
   version "1.0.8"
@@ -10223,7 +10224,7 @@ killable@^1.0.1:
   resolved "https://registry.yarnpkg.com/killable/-/killable-1.0.1.tgz#4c8ce441187a061c7474fb87ca08e2a638194892"
   integrity sha512-LzqtLKlUwirEUyl/nicirVmNiPvYs7l5n8wOPP7fyJVpUPkvCnW/vuiXGpylGUlnPDnB7311rARzAt3Mhswpjg==
 
-kind-of@^2.0.1, kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0, kind-of@^4.0.0, kind-of@^5.0.0, kind-of@^6.0.0, kind-of@^6.0.2, kind-of@^6.0.3:
+kind-of@>=6.0.3, kind-of@^2.0.1, kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0, kind-of@^4.0.0, kind-of@^5.0.0, kind-of@^6.0.0, kind-of@^6.0.2:
   version "6.0.3"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.3.tgz#07c05034a6c349fa06e24fa35aa76db4580ce4dd"
   integrity sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==
