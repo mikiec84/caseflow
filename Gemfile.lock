@@ -330,7 +330,9 @@ GEM
     mime-types (3.3)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2019.1009)
-    mimemagic (0.3.4)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.14.0)
@@ -380,7 +382,8 @@ GEM
       pry (~> 0.10)
     psych (3.1.0)
     public_suffix (3.1.1)
-    puma (3.12.4)
+    puma (4.3.8)
+      nio4r (~> 2.0)
     rack (2.0.9)
     rack-contrib (2.1.0)
       rack (~> 2.0)
@@ -644,7 +647,7 @@ DEPENDENCIES
   pg
   pry
   pry-byebug
-  puma (~> 3.12.4)
+  puma (~> 4.3.8)
   rack (~> 2.0.6)
   rails (= 5.2.4.2)
   rails-erd
